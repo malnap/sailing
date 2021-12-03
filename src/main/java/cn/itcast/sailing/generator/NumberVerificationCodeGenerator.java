@@ -4,7 +4,6 @@ import java.util.Random;
 
 public class NumberVerificationCodeGenerator implements VerificationCodeGenerator {
 
-
     public NumberVerificationCodeGenerator(int len){
         this.len = len;
     }

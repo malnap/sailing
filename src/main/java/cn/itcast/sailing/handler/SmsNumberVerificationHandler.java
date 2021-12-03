@@ -35,7 +35,6 @@ public class SmsNumberVerificationHandler extends AbstractVerificationHandler {
 		verificationCodeGenerator = new NumberVerificationCodeGenerator(len);
 	}
 
-
 	@Override
 	public String getName() {
 		return name;
@@ -74,12 +73,11 @@ public class SmsNumberVerificationHandler extends AbstractVerificationHandler {
 		String mobile = String.valueOf(payload.get("mobile"));
 
 		// 使用腾讯云发送短信
-		smsService.send(mobile, code, getEffectiveTime());
+//		smsService.send(mobile, code, getEffectiveTime());
 
 		// 测试使用，在控制台输出验证码
-//		smsService.sendOnConsole(mobile, code, getEffectiveTime());
+		smsService.sendOnConsole(mobile, code, getEffectiveTime());
 		return null;
 	}
-
 
 }

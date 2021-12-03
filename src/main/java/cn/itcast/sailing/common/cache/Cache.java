@@ -10,7 +10,6 @@ public interface Cache {
      */
     Set<String> getKeys();
 
-
     Set<String> getKeys(String pattern);
 
     /**
@@ -21,14 +20,12 @@ public interface Cache {
      */
     Boolean exists(String key);
 
-
     /**
      * 移除给定的一个或多个key。如果key不存在，则忽略该命令。
      *
      * @param key
      */
     void del(String key);
-
 
     /**
      * 简单的字符串设置
@@ -54,8 +51,6 @@ public interface Cache {
      */
     String get(String key);
 
-
-
     /**
      * key seconds 为给定key设置生存时间。当key过期时，它会被自动删除。
      *
@@ -64,7 +59,6 @@ public interface Cache {
      */
     void expire(String key, int expire);
 
-
     /**
      * 如果key已经存在并且是一个字符串，APPEND命令将value追加到key原来的值之后。
      *
@@ -72,9 +66,6 @@ public interface Cache {
      * @param value
      */
     void append(String key, String value);
-
-
-
 
     /**
      * 获取旧值返回新值，不存在返回nil
@@ -94,11 +85,9 @@ public interface Cache {
      */
     boolean setnx(String key, String value);
 
-
     /**
      * 计数器
      */
     Long incrBy(String key, Long delta);
-
 
 }

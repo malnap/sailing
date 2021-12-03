@@ -1,6 +1,5 @@
 package cn.itcast.sailing.common.intercept;
 
-
 import cn.itcast.sailing.common.domain.BusinessException;
 import cn.itcast.sailing.common.domain.CommonErrorCode;
 import cn.itcast.sailing.common.domain.RestResponse;
@@ -16,7 +15,6 @@ import org.springframework.web.servlet.NoHandlerFoundException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 
 @ControllerAdvice
 public class GlobalExceptionHandler {

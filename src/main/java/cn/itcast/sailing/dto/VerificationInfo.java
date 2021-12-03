@@ -1,6 +1,5 @@
 package cn.itcast.sailing.dto;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -11,9 +10,6 @@ import lombok.Data;
 @AllArgsConstructor
 public class VerificationInfo {
 
-    /**
-     *
-     */
     private String key;
 
     /**

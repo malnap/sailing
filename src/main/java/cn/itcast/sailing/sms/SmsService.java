@@ -1,12 +1,7 @@
 package cn.itcast.sailing.sms;
 
 /**
- * <P>
  * 短信服务
- * </p>
- *
- * @author zhupeiyuan
- * @since 2019-07-12
  */
 public interface SmsService {
 

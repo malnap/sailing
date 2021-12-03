@@ -1,6 +1,5 @@
 package cn.itcast.sailing.controller;
 
-
 import cn.itcast.sailing.common.domain.RestResponse;
 import cn.itcast.sailing.dto.VerificationInfo;
 import cn.itcast.sailing.service.VerificationService;
@@ -9,10 +8,7 @@ import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
@@ -22,8 +18,6 @@ public class VerificationController {
 
     @Autowired
     private VerificationService verificationService;
-
-
 
     @ApiOperation(value="生成验证信息", notes="生成验证信息")
     @ApiImplicitParams({

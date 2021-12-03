@@ -28,7 +28,6 @@ public class VerificationService {
         return verificationHandler.generateVerificationInfo(payload, effectiveTime);
     }
 
-
     /**
      * 验证信息
      * @param name 业务名称
@@ -40,9 +39,6 @@ public class VerificationService {
         AbstractVerificationHandler verificationHandler =  getVerificationHandler(name);
         return verificationHandler.verify(verificationKey, verificationCode);
     }
-
-
-
 
     private AbstractVerificationHandler getVerificationHandler(String name) {
         AbstractVerificationHandler verificationHandler = verificationHandlerMap.get(name);

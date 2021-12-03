@@ -9,7 +9,6 @@ public enum CommonErrorCode implements ErrorCode {
 
 	UNKNOWN(999999, "未知错误");
 
-
 	private int code;
 	private String desc;
 

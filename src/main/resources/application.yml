@@ -10,8 +10,6 @@ spring:
   main:
     allow-bean-definition-overriding: true
 
-
-
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
@@ -27,12 +25,13 @@ spring:
         max-active: 8
         max-wait: 10000
     timeout: 10000
+    password: 123456
 
 sms:
   qcloud:
-    appId: 14000000
-    appKey: 36ff7sd14d0d2342344cdf335cc25052
-    templateId: 234323
+    appId: 0
+    appKey: appKey
+    templateId: 0
     sign: 签名
 
 swagger:

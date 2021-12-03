@@ -26,6 +26,7 @@ public class RestResponse<T> {
 	public static <T> RestResponse<T> success(T result) {
 		RestResponse<T> response = new RestResponse<T>();
 		response.setResult(result);
+		response.setMsg("正常");
 		return response;
 	}
 

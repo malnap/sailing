@@ -1,6 +1,5 @@
 package cn.itcast.sailing.common.domain;
 
-
 /**
  * 业务异常
  */

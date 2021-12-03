@@ -5,7 +5,6 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-
 public class RedisCache implements Cache {
 
 	private StringRedisTemplate redisTemplate;

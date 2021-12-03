@@ -55,7 +55,6 @@ public abstract class AbstractVerificationHandler {
         return new VerificationInfo(key ,content);
     }
 
-
     /**
      * 验证信息
      * @param verificationKey  验证key
@@ -72,6 +71,4 @@ public abstract class AbstractVerificationHandler {
         }
         return code.equals(verificationCode);
     }
-
-
 }

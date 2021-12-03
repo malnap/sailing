@@ -5,11 +5,8 @@ package cn.itcast.sailing.store;
  */
 public interface VerificationStore{
 
-
     void set(String key, String value, Integer expire);
 
-
     String get(String key);
-
 
 }
