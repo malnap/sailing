@@ -10,6 +10,12 @@ public interface Cache {
      */
     Set<String> getKeys();
 
+    /**
+     * 根据pattern列出所有的key
+     *
+     * @param pattern
+     * @return
+     */
     Set<String> getKeys(String pattern);
 
     /**
