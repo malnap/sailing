@@ -25,7 +25,8 @@ public class BusinessConfig {
 
 	@Bean
 	public SmsNumberVerificationHandler smsNumberVerificationHandler() {
-		SmsNumberVerificationHandler smsNumberVerificationHandler = new SmsNumberVerificationHandler("sms", 6);
+		SmsNumberVerificationHandler smsNumberVerificationHandler =
+				new SmsNumberVerificationHandler("sms", 6);
 		smsNumberVerificationHandler.setVerificationStore(verificationStore);
 		smsNumberVerificationHandler.setSmsService(qCloudSmsService);
 		return smsNumberVerificationHandler;

@@ -16,14 +16,26 @@ import java.util.Map;
 @Slf4j
 public class SmsNumberVerificationHandler extends AbstractVerificationHandler {
 
+	/**
+	 * 标识，sms
+	 */
 	private String name;
 
+	/**
+	 * 验证码长度
+	 */
 	private int len;
 
 	private VerificationStore verificationStore;
 
+	/**
+	 * 验证码key生成器
+	 */
 	private VerificationKeyGenerator verificationKeyGenerator;
 
+	/**
+	 * 验证码生成器
+	 */
 	private VerificationCodeGenerator verificationCodeGenerator;
 
 	private SmsService smsService;
@@ -69,7 +81,7 @@ public class SmsNumberVerificationHandler extends AbstractVerificationHandler {
 	}
 
 	@Override
-	String confusion(Map<String, Object> payload, String key, String code) {
+	public String confusion(Map<String, Object> payload, String key, String code) {
 		String mobile = String.valueOf(payload.get("mobile"));
 
 		// 使用腾讯云发送短信
@@ -79,5 +91,4 @@ public class SmsNumberVerificationHandler extends AbstractVerificationHandler {
 		smsService.sendOnConsole(mobile, code, getEffectiveTime());
 		return null;
 	}
-
 }

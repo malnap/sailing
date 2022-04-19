@@ -6,6 +6,7 @@ public interface Cache {
 
     /**
      * 列出所有的key
+     *
      * @return
      */
     Set<String> getKeys();
@@ -42,6 +43,7 @@ public interface Cache {
     void set(String key, String value);
 
     /**
+     * 带失效时间
      *
      * @param key
      * @param value
@@ -58,7 +60,7 @@ public interface Cache {
     String get(String key);
 
     /**
-     * key seconds 为给定key设置生存时间。当key过期时，它会被自动删除。
+     * 为给定key设置生存时间。当key过期时，它会被自动删除。
      *
      * @param key
      * @param expire
@@ -66,7 +68,7 @@ public interface Cache {
     void expire(String key, int expire);
 
     /**
-     * 如果key已经存在并且是一个字符串，APPEND命令将value追加到key原来的值之后。
+     * 如果key已经存在并且是一个字符串，append命令将value追加到key原来的值之后。
      *
      * @param key
      * @param value
@@ -95,5 +97,4 @@ public interface Cache {
      * 计数器
      */
     Long incrBy(String key, Long delta);
-
 }

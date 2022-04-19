@@ -29,22 +29,22 @@ public class QCloudSmsSingleSender extends SmsSingleSender {
 	}
 
 	@Override
-	public SmsSingleSenderResult sendWithParam(String nationCode, String phoneNumber, int templateId, String[] params,
-			String sign, String extend, String ext) throws HTTPException, JSONException, IOException {
-		return this
-				.sendWithParam(nationCode, phoneNumber, templateId, new ArrayList(Arrays.asList(params)), sign, extend,
-						ext);
+	public SmsSingleSenderResult sendWithParam(String nationCode, String phoneNumber, int templateId,
+											   String[] params, String sign, String extend,
+											   String ext) throws HTTPException, JSONException, IOException {
+		return this.sendWithParam(nationCode, phoneNumber, templateId,
+				new ArrayList(Arrays.asList(params)), sign, extend, ext);
 	}
 
 	@Override
 	public SmsSingleSenderResult sendWithParam(String nationCode, String phoneNumber, int templateId,
-			ArrayList<String> params, String sign, String extend, String ext)
+											   ArrayList<String> params, String sign, String extend, String ext)
 			throws HTTPException, JSONException, IOException {
 		long random = SmsSenderUtil.getRandom();
 		long now = SmsSenderUtil.getCurrentTime();
 		//扩展方法使用fastjson
 		JSONObject body = new JSONObject();
-		Map telMap = new HashMap<>();
+		Map<String, Object> telMap = new HashMap<>();
 		telMap.put("mobile", phoneNumber);
 		telMap.put("nationcode", nationCode);
 		body.put("tel", telMap);
@@ -56,8 +56,10 @@ public class QCloudSmsSingleSender extends SmsSingleSender {
 		body.put("extend", SmsSenderUtil.isNotEmpty(extend) ? extend : "");
 		body.put("ext", SmsSenderUtil.isNotEmpty(ext) ? ext : "");
 
-		HTTPRequest req = (new HTTPRequest(HTTPMethod.POST, this.url)).addHeader("Conetent-Type", "application/json")
-				.addQueryParameter("sdkappid", this.appid).addQueryParameter("random", random)
+		HTTPRequest req = (new HTTPRequest(HTTPMethod.POST, this.url))
+				.addHeader("Conetent-Type", "application/json")
+				.addQueryParameter("sdkappid", this.appid)
+				.addQueryParameter("random", random)
 				.setConnectionTimeout('\uea60').setRequestTimeout('\uea60').setBody(body.toString());
 
 		try {

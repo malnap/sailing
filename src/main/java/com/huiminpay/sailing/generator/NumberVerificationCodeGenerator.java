@@ -2,26 +2,35 @@ package com.huiminpay.sailing.generator;
 
 import java.util.Random;
 
+/**
+ * 数字短信验证码生成器
+ */
 public class NumberVerificationCodeGenerator implements VerificationCodeGenerator {
+
+    private int len;
 
     public NumberVerificationCodeGenerator(int len){
         this.len = len;
     }
-
-    private int len;
 
     @Override
     public String generate() {
         return getNumRandom(len);
     }
 
-    private  String getNumRandom(int length) {
-        String val = "";
+    /**
+     * 随机生成6位数的验证码，左开右闭
+     *
+     * @param length
+     * @return
+     */
+    private String getNumRandom(int length) {
+        StringBuilder val = new StringBuilder();
         Random random = new Random();
-        for(int i = 0; i < length; i++) {
-            val += String.valueOf(random.nextInt(10));
+        for (int i = 0; i < length; i++) {
+            val.append(random.nextInt(10));
         }
-        return val;
+        return val.toString();
     }
 
 }

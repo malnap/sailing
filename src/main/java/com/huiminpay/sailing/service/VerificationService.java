@@ -11,6 +11,7 @@ import java.util.Map;
 @Service
 public class VerificationService {
 
+    //sms=com.huiminpay.sailing.handler.SmsNumberVerificationHandler@22d59af3
     @Autowired
 	@Qualifier("verificationHandlerMap")
     private Map<String, AbstractVerificationHandler> verificationHandlerMap;

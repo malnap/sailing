@@ -1,7 +1,7 @@
 package com.huiminpay.sailing.generator;
 
 /**
- * 验证key生成器
+ * verificationKey生成器
  */
 public interface VerificationKeyGenerator {
 

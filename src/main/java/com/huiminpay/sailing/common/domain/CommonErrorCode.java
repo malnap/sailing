@@ -1,6 +1,5 @@
 package com.huiminpay.sailing.common.domain;
 
-
 public enum CommonErrorCode implements ErrorCode {
 
 	SUCCESS(0, "成功"),

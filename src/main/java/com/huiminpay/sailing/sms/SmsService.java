@@ -12,8 +12,7 @@ public interface SmsService {
 	 * @param content
 	 * @return
 	 */
-	default void send(String mobile, String content) {
-	}
+	default void send(String mobile, String content) {}
 
 	/**
 	 * 发送短信验证码
